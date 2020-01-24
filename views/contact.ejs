@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<%- include("partials/header") %>
+
+<div class="container text-center" id="contactForm">
+	<h3>השאירו פרטים ואחזור אליכם בהקדם</h3>
+	<form action="contact/send" method="post" enctype="text/plain">
+		<div class="form-group row">
+			<!-- <label class="form-label" for="email">מייל</label> -->
+			<input type="email" class="form-control text-right" id="email" name="email" placeholder="מייל">
+		</div>
+		<div class="form-group row" >
+			<!-- <label class="form-label text-right" for="name"><p>שם</p></label> -->
+			<input type="text" class="form-control text-right" id="name" name="name" placeholder="שם פרטי ומשפחה" >
+		</div>
+		<div class="form-group row">
+			<!-- <label class="form-label" for="name">טלפון</label> -->
+			<input type="text" class="form-control text-right" id="phone" name="phone" placeholder="טלפון ליצירת קשר">
+		</div>
+		<!-- <input type="submit" value="Send"> -->
+	</form>
+	<button  type="submit" class="btn btn-info btn-lg">שלח</button>	
+</div>
+
+
+
+
+<%- include("partials/footer") %>
