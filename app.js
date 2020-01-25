@@ -12,11 +12,19 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", function(req, res){
-	res.render("index");
+	res.render("./index");
 });
 
 app.get("/gallery", function(req, res){
 	res.render("gallery");
+});
+
+app.get("/contact", function(req, res){
+	res.render("contact");
+});
+
+app.get("/Recommendations", function(req, res){
+	res.render("Recommendations");
 });
 
 app.get("/product", function(req, res){
@@ -78,10 +86,10 @@ app.post("/contact_send", function(req, res){
 // }
 });
 
-	
-app.listen(3000, function(){
-	console.log("server listen on port 3000");
-});
+//comment this out before pushing to heroku	
+// app.listen(3000, function(){
+// 	console.log("server listen on port 3000");
+// });
 
 
 app.listen(process.env.PORT, process.env.IP, function(){
