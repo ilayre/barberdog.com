@@ -240,10 +240,6 @@ body, html {
   }
 }
 
-.row {
-  margin: 15px;
-}
-
 .rotate {
   transform: rotate(180deg);
 }
