@@ -3,23 +3,23 @@
 
 <div class="container text-center" id="contactForm">
 	<h1>השאירו פרטים ואחזור אליכם בהקדם</h1>
-	<br>
-	<form action="contact/send" method="post" enctype="text/plain">
+	<form action="contact_send" method="POST">
 		<div class="form-group row">
-			<!-- <label class="form-label" for="email">מייל</label> -->
-			<input type="email" class="form-control text-right" id="email" name="email" placeholder="מייל">
+			<label class="form-label" for="name"></label>
+			<input type="text" class="form-control text-right" id="name" name="name" placeholder="שם פרטי ומשפחה">
 		</div>
 		<div class="form-group row" >
-			<!-- <label class="form-label text-right" for="name"><p>שם</p></label> -->
-			<input type="text" class="form-control text-right" id="name" name="name" placeholder="שם פרטי ומשפחה" >
+			<label class="form-label text-right" for="phone"><p></p></label>
+			<input type="text" class="form-control text-right" id="phone" name="phone" placeholder="טלפון ליצירת קשר" >
 		</div>
 		<div class="form-group row">
-			<!-- <label class="form-label" for="name">טלפון</label> -->
-			<input type="text" class="form-control text-right" id="phone" name="phone" placeholder="טלפון ליצירת קשר">
+			<label class="form-label" for="dog"></label>
+			<input type="text" class="form-control text-right" id="dog" name="dog" placeholder="גזע הכלב">
 		</div>
 		<!-- <input type="submit" value="Send"> -->
+		<button type="submit" class="btn btn-info btn-lg">שלח</button>
 	</form>
-	<button  type="submit" class="btn btn-info btn-lg">שלח</button>	
+		
 </div>
 <br>
 
