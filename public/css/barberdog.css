@@ -68,17 +68,15 @@ body, html {
     max-width: 40%;
   }
 }
-@media (max-width: 575.98px){
+
+
+@media (min-width:767px){
   .slide-gallery-img {
-    max-width: 80%;
+    max-width: 50%;
+    margin: auto;
   }
 }
 
-
-.slide-gallery-img {
-  max-width: 50%;
-  margin: auto;
-}
 
 .block .block-line {
   margin: auto;
