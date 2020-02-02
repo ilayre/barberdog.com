@@ -240,9 +240,9 @@ body, html {
   }
 }
 
-.rotate {
+/* .rotate {
   transform: rotate(180deg);
-}
+} */
 .flip {
   transform: rotate(90deg);
 }
