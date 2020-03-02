@@ -4,6 +4,9 @@ const exphbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
+const dotenv = require("dotenv")
+
+dotenv.config()
 
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -59,14 +62,14 @@ app.post("/contact_send", function(req, res){
 		// port: 587,
    		// secure: false,
 		auth: {
-		  user: 'barber.dog.contact@gmail.com',
-		  pass: 'qFgSbKwCfh5urhD' 
+		  user: process.env.EMAIL_ADDRESS,
+		  pass: process.env.EMAIL_PASSWORD 
 		}
 	});
 	
 	  // send mail with defined transport object
 	let mailOptions = {
-		from: 'barber.dog.contact@gmail.com', // sender address
+		from: process.env.EMAIL_ADRESS, // sender address
 		to: 'orbarberdog@gmail.com', // list of receivers oruzal85@gmail.com orbarberdog@gmail.com
 		subject: "you have a new contact", // Subject line
 		text: "Hello", // plain text body
