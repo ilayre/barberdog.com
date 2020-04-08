@@ -9,8 +9,8 @@ const dotenv = require("dotenv");
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
-const privateKey  = fs.readFileSync('/public/www_barberdog_co_il.key', 'utf8');
-const certificate = fs.readFileSync('/public/www_barberdog_co_il.pem', 'utf8');
+const privateKey  = fs.readFileSync('public/www_barberdog_co_il.key', 'utf8');
+const certificate = fs.readFileSync('public/www_barberdog_co_il.pem', 'utf8');
 const credentials = {key: privateKey, cert: certificate};
 
 
