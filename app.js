@@ -9,8 +9,8 @@ const https = require("https"),
 	helmet = require("helmet");
 
 const options = {
-	key: fs.readFileSync("/www_barberdog_co_il.key"),
-	cert: fs.readFileSync("/www_barberdog_co_il.pem")
+	key: fs.readFileSync('/public/www_barberdog_co_il.key'),
+	cert: fs.readFileSync('/public/www_barberdog_co_il.pem')
 }	
 const app = express();
 app.use(helmet());
