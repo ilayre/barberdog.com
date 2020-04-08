@@ -4,9 +4,9 @@ const exphbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
 
-dotenv.config()
+dotenv.config();
 
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -14,9 +14,19 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
+app.use('/public/robots.txt', function (req, res, next) {
+    res.type('text/plain')
+    res.send("User-agent: *\nDisallow: /");
+});
+
+
 app.get("/", function(req, res){
 	res.render("./index");
 });
+
+app.get('/sitemap.xml', function(req, res) {
+	res.sendFile('sitemap.xml');
+	});
 
 app.get("/gallery", function(req, res){
 	res.render("gallery");
@@ -89,10 +99,10 @@ app.post("/contact_send", function(req, res){
 // }
 });
 
-//comment this out before pushing to heroku	
-// app.listen(3000, function(){
-// 	console.log("server listen on port 3000");
-// });
+	
+app.listen(3000, function(){
+	console.log("server listen on port 3000");
+});
 
 
 app.listen(process.env.PORT, process.env.IP, function(){
