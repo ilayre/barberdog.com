@@ -4,16 +4,18 @@ const exphbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const dotenv = require("dotenv");
-const https = require("https"),
-	fs = require("fs"),
-	helmet = require("helmet");
 
-const options = {
-	key: fs.readFileSync('/public/www_barberdog_co_il.key'),
-	cert: fs.readFileSync('/public/www_barberdog_co_il.pem')
-}	
+
+const fs = require('fs');
+const http = require('http');
+const https = require('https');
+const privateKey  = fs.readFileSync('/public/www_barberdog_co_il.key', 'utf8');
+const certificate = fs.readFileSync('/public/www_barberdog_co_il.pem', 'utf8');
+const credentials = {key: privateKey, cert: certificate};
+
+
+
 const app = express();
-app.use(helmet());
 
 dotenv.config();
 
@@ -113,8 +115,11 @@ app.post("/contact_send", function(req, res){
 // 	console.log("server listen on port 3000");
 // });
 
-app.listen(8000);
-https.createServer(options, app).listen(8080);
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(8080);
+httpsServer.listen(8443);
 
 // app.listen(process.env.PORT, process.env.IP, function(){
 // 	console.log("Server has started");
