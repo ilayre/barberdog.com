@@ -7,11 +7,11 @@ const dotenv = require("dotenv");
 
 
 const fs = require('fs');
-const http = require('http');
+
 const https = require('https');
-const privateKey  = fs.readFileSync('public/www_barberdog_co_il.key', 'utf8');
-const certificate = fs.readFileSync('public/www_barberdog_co_il.pem', 'utf8');
-const credentials = {key: privateKey, cert: certificate};
+// const privateKey  = fs.readFileSync('public/www_barberdog_co_il.key', 'utf8');
+// const certificate = fs.readFileSync('public/www_barberdog_co_il.pem', 'utf8');
+// const credentials = {key: privateKey, cert: certificate};
 
 
 
@@ -115,11 +115,13 @@ app.post("/contact_send", function(req, res){
 // 	console.log("server listen on port 3000");
 // });
 
-var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
-
-httpServer.listen(8080);
-httpsServer.listen(8443);
+https.createServer({
+	key: fs.readFileSync('public/www_barberdog_co_il.key'),
+	cert: fs.readFileSync('public/www_barberdog_co_il.pem')
+}, app)
+.listen(3000, function(){
+	console.log("Server has started");
+})
 
 // app.listen(process.env.PORT, process.env.IP, function(){
 // 	console.log("Server has started");
