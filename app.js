@@ -119,9 +119,9 @@ app.post("/contact_send", function(req, res){
 // httpsServer.listen(8443);
 
 
-// app.listen(3000, function(){
-// 	console.log("server listen on port 3000");
-// });
+app.listen(3000, function(){
+	console.log("server listen on port 3000");
+});
 
 
 app.listen(process.env.PORT, process.env.IP, function(){
