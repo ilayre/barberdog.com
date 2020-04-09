@@ -7,6 +7,7 @@ const dotenv = require("dotenv");
 const https = require('https');
 const fs = require('fs');
 var http = require('http');
+var secure = require('ssl-express-www');
 
 const credentials  = {
 	key: fs.readFileSync('sslcert/www_barberdog_co_il.key', 'utf8'),
