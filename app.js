@@ -8,6 +8,7 @@ const https = require('https');
 const fs = require('fs');
 var http = require('http');
 var secure = require('ssl-express-www');
+var sslRedirect = require('heroku-ssl-redirect');
 
 const credentials  = {
 	key: fs.readFileSync('sslcert/www_barberdog_co_il.key', 'utf8'),
@@ -15,7 +16,7 @@ const credentials  = {
   };
 
 const express = require("express");
-const app = express(secure);
+const app = express(sslRedirect());
 
 dotenv.config();
 
