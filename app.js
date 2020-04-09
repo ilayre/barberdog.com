@@ -26,7 +26,7 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
-app.use('/public/robots.txt', function (req, res, next) {
+app.get('/public/robots.txt', function (req, res, next) {
     res.type('text/plain')
     res.send("User-agent: *\nDisallow: /");
 });
