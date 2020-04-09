@@ -1,3 +1,3 @@
-UserAgent: *
-Disallow: 
+user-agent: *
+Disallow: /
 Sitemap: https://barberdog.co.il/sitemap.xml

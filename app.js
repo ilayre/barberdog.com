@@ -36,6 +36,7 @@ app.get("/", function(req, res){
 app.get('/sitemap.xml', function(req, res) {
 	res.sendFile('sitemap.xml');
 	});
+	
 app.get('/robots.txt', function(req, res) {
 	res.sendFile('robots.txt');
 	});
