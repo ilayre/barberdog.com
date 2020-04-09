@@ -14,7 +14,7 @@ const credentials  = {
   };
 
 const express = require("express");
-const app = express();
+const app = express(secure);
 
 dotenv.config();
 
@@ -110,11 +110,11 @@ app.post("/contact_send", function(req, res){
 });
 
 
-var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
+// var httpServer = http.createServer(app);
+// var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(8080);
-httpsServer.listen(8443);
+// httpServer.listen(8080);
+// httpsServer.listen(8443);
 
 
 // app.listen(3000, function(){
@@ -122,6 +122,6 @@ httpsServer.listen(8443);
 // });
 
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-// 	console.log("Server has started");
-// });
+app.listen(process.env.PORT, process.env.IP, function(){
+	console.log("Server has started");
+});
