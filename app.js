@@ -6,6 +6,7 @@ const path = require('path');
 const dotenv = require("dotenv");
 const https = require('https');
 const fs = require('fs');
+var http = require('http');
 
 const credentials  = {
 	key: fs.readFileSync('sslcert/www_barberdog_co_il.key', 'utf8'),
@@ -109,9 +110,11 @@ app.post("/contact_send", function(req, res){
 });
 
 
-
+var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
-httpsServer.listen(process.env.PORT, process.env.IP);
+
+httpServer.listen(8080);
+httpsServer.listen(8443);
 
 
 // app.listen(3000, function(){
