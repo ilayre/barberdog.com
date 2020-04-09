@@ -26,10 +26,7 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
-app.get('/public/robots.txt', function (req, res, next) {
-    res.type('text/plain')
-    res.send("User-agent: ");
-});
+
 
 
 app.get("/", function(req, res){
@@ -38,6 +35,9 @@ app.get("/", function(req, res){
 
 app.get('/sitemap.xml', function(req, res) {
 	res.sendFile('sitemap.xml');
+	});
+app.get('/robots.txt', function(req, res) {
+	res.sendFile('robots.txt');
 	});
 
 app.get("/gallery", function(req, res){
