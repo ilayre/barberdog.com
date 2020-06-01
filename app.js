@@ -1,10 +1,6 @@
-
 const bodyParser = require("body-parser");
-const exphbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
-const path = require('path');
 const dotenv = require("dotenv");
-const https = require('https');
 const fs = require('fs');
 var http = require('http');
 var secure = require('ssl-express-www');
@@ -26,18 +22,13 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
-
-
-
 app.get("/", function(req, res){
 	res.render("./index");
 });
 
 app.get('/sitemap.xml', function(req, res) {
 	res.sendFile('sitemap.xml');
-	});
-
-
+});
 
 app.get("/gallery", function(req, res){
 	res.render("gallery");
@@ -51,9 +42,6 @@ app.get("/Recommendations", function(req, res){
 	res.render("Recommendations");
 });
 
-app.get("/product", function(req, res){
-	res.render("product");
-});
 
 app.get("/contact_send", function(req, res){
 	res.render("contact_send");
@@ -73,15 +61,9 @@ app.post("/contact_send", function(req, res){
 			<li>Phone: ${req.body.phone}</li>
 		</ul>
 	`;
-	// async function main() {
-	// 	// Generate test SMTP service account from ethereal.email
-	// 	// Only needed if you don't have a real mail account for testing
-	// 	let testAccount = await nodemailer.createTestAccount();
 
 	let transporter = nodemailer.createTransport({
 		service: 'gmail',
-		// port: 587,
-   		// secure: false,
 		auth: {
 		  user: process.env.EMAIL_ADDRESS,
 		  pass: process.env.EMAIL_PASSWORD 
@@ -106,23 +88,13 @@ app.post("/contact_send", function(req, res){
 			return res.render("contact_send");
 		}
 	});
-
-// }
 });
-
-
-// var httpServer = http.createServer(app);
-// var httpsServer = https.createServer(credentials, app);
-
-// httpServer.listen(8080);
-// httpsServer.listen(8443);
-
 
 app.listen(3000, function(){
 	console.log("server listen on port 3000");
 });
 
 
-app.listen(process.env.PORT, process.env.IP, function(){
-	console.log("Server has started");
-});
+// app.listen(process.env.PORT, process.env.IP, function(){
+// 	console.log("Server has started");
+// });
