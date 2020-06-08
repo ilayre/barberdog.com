@@ -47,6 +47,12 @@ body, html {
   border-bottom: 10%;
 }
 
+#logos {
+  height: 3rem;
+  width: 10rem;
+}
+
+
 
 
 .gallery-img {
@@ -55,17 +61,17 @@ body, html {
 }
 
 @media (min-width: 720px){
-  #logo {
+  #logo #logos {
     max-width: 75%;
   }
 }
 @media (min-width: 960px){
-  #logo {
+  #logo #logos{
     max-width: 50%;
   }
 }
 @media (min-width: 1200px){
-  #logo{
+  #logo #logos{
     max-width: 40%;
   }
 }
