@@ -26,12 +26,8 @@ body, html {
 }
 
 .sticky {
-  align-items: center;
-  height: 80px;
   position: sticky;
   bottom: 0;
-  padding: 30px; 
-  display: flex;
 }
 
 .text {
