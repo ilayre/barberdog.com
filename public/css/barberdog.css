@@ -26,8 +26,12 @@ body, html {
 }
 
 .sticky {
+  align-items: center;
+  height: 80px;
   position: sticky;
   bottom: 0;
+  padding: 30px; 
+  display: flex;
 }
 
 .text {
@@ -52,13 +56,29 @@ body, html {
   width: 10rem;
 }
 
-
-
-
-.gallery-img {
-  max-width: 30%;
-  height: auto;
+.info{
+  text-align: center;
+  font-size: x-large;
 }
+
+@media(min-width: 768px) {
+  .logo {
+    max-width: 50%;
+  }
+  .sticky{
+    display: none;
+  }
+  .card-size{
+    max-width: 50px;
+  }
+  .carousel-size{
+    max-width: 50%;
+  }
+  /* .main-image{
+    max-width: 500px;
+  } */
+}
+
 
 @media (min-width: 720px){
   #logo #logos {
