@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require('nodemailer');
 const dotenv = require("dotenv");
-const fs = require('fs');
 var sslRedirect = require('heroku-ssl-redirect');
 
 const credentials  = {
@@ -22,7 +21,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", function(req, res){
-	res.render("index");
+	res.render("./index");
 });
 
 app.get('/sitemap.xml', function(req, res) {
