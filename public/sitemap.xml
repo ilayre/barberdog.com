@@ -18,17 +18,12 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.barberdog.co.il/product</loc>
-  <lastmod>2020-04-08T11:02:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://www.barberdog.co.il/gallery</loc>
   <lastmod>2020-04-08T11:02:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.barberdog.co.il/Recommendations</loc>
+  <loc>https://www.barberdog.co.il/catalog</loc>
   <lastmod>2020-04-08T11:02:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
